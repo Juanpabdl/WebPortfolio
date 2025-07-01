@@ -1,0 +1,33 @@
+.navbar_menu{
+    @apply h-screen bg-custom-teal transition-all ease-linear duration-500
+    flex flex-col flex-nowrap
+}
+
+.burger{
+    @apply flex justify-end
+}
+
+.burger .icon{
+    @apply p-2 cursor-pointer 
+}
+
+.menuIcon{
+    @apply stroke-custom-dk-teal group-hover:stroke-custom-yellow
+}
+
+.navbar_list{
+    @apply h-full w-full list-none mx-auto  flex flex-col justify-center
+}
+
+.navbar_list li{
+    @apply mt-5 hover:border-l-8 hover:border-l-custom-yellow hover:bg-custom-dk-gray 
+}
+
+
+.navbar_li_box{
+    @apply h-10 mt-4 cursor-pointer flex flex-row flex-nowrap justify-evenly align-middle hover:underline hover:text-custom-yellow
+}
+
+.navbar_li_box span{
+    @apply relative top-1
+}
