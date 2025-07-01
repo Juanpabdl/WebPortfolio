@@ -22,6 +22,11 @@
   padding: 0;
 }
 
+.page{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 a {
   font-weight: 500;
   color: white;
