@@ -1,5 +1,5 @@
 .navbar_menu{
-    @apply h-screen bg-custom-teal transition-all ease-linear duration-500
+    @apply h-screen fixed top-0 bg-custom-teal transition-all ease-linear duration-500
     flex flex-col flex-nowrap
 }
 
@@ -23,9 +23,9 @@
     @apply mt-5 hover:border-l-8 hover:border-l-custom-yellow hover:bg-custom-dk-gray 
 }
 
-
 .navbar_li_box{
-    @apply h-10 mt-4 cursor-pointer flex flex-row flex-nowrap justify-evenly align-middle hover:underline hover:text-custom-yellow
+    @apply h-10 mt-4 cursor-pointer flex flex-row flex-nowrap justify-evenly align-middle 
+    group-hover:underline group-hover:text-custom-yellow
 }
 
 .navbar_li_box span{

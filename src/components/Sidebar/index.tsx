@@ -23,8 +23,8 @@ const SideBar = () => {
             <ul className="navbar_list">
                 {sideData.map((item, index) => {
                     return (
-                        <li key={index}>
-                            <Link to={item.path} className="group navbar_li_box">
+                        <li key={index} className="group">
+                            <Link to={item.path} className="navbar_li_box">
                                 {item.icon}
                                 <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
                             </Link>
