@@ -15,7 +15,7 @@ const Banner = () => {
                     both functionality and appeal.
                 </p>
                 {/*Boton*/}
-                <CustomButton className='btn-default'>Let's Talk</CustomButton>
+                <CustomButton className='btn-default mx-auto w-1/2 sm:w-1/3'>Let's Talk</CustomButton>
             </div>
         </div>
     )
