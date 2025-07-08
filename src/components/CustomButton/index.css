@@ -1,8 +1,8 @@
 .btn-default{
-    @apply w-1/2 sm:w-1/3 p-2 mt-3 mx-auto bg-custom-dk-teal hover:bg-custom-teal 
+    @apply p-2 mt-3 bg-custom-dk-teal hover:bg-custom-teal 
     active:bg-custom-yellow active:text-custom-dk-gray rounded-lg cursor-pointer
 }
 
 .btn-blocked{
-    @apply w-1/2 sm:w-1/3 p-2 mt-6 mx-auto bg-[#555] rounded-md cursor-not-allowed
+    @apply p-2 mt-3 mx-auto bg-[#555] rounded-md cursor-not-allowed
 }
