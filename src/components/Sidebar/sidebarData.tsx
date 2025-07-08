@@ -1,9 +1,14 @@
-import {CircleUserIcon, GalleryHorizontal, Send } from "lucide-react";
+import {CircleUserIcon, GalleryHorizontal, Home, Send } from "lucide-react";
 
 export const sideData = [
     {
+        title: 'Home',
+        path:'/',
+        icon: <Home size={32} color="#158063" strokeWidth={2} className="menuIcon" />
+    },
+    {
         title: 'About Me',
-        path: '/',
+        path: '/about-me',
         icon: <CircleUserIcon size={32} color="#158063" strokeWidth={2} className="menuIcon"/>
     },
     {
