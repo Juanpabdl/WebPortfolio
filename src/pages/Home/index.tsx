@@ -1,5 +1,6 @@
 import SideBar from "../../components/Sidebar";
 import Banner from "../../components/Banner";
+import AboutMe from "../../components/AboutMe";
 
 const Home = () => {
     return (
@@ -12,10 +13,13 @@ const Home = () => {
                     </span> 
                     / Web Portfolio
                 </p>
+
                 {/* Banner Section */}
                 <Banner />
-                {/* Main Content */}
 
+                {/* Main Content */}
+                <AboutMe/>
+                
                 {/* Footer */}
             </div>
         </div>
