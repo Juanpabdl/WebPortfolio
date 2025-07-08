@@ -1,0 +1,33 @@
+.info-container{
+    @apply mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 items-center
+    text-xs md:text-base
+}
+
+.info-container h3{
+    @apply text-sm md:text-lg
+}
+
+.card-info{
+    @apply p-5 bg-gradient-to-t from-custom-dk-gray to-[#333] rounded-sm
+}
+
+.card-info p{
+    @apply text-xs
+}
+
+.card-icon{
+    @apply p-2 rounded-full bg-custom-teal/20
+}
+
+.skill-select{
+    @apply mt-3 flex flex-wrap justify-center gap-3 mb-12
+}
+
+.skill-container{
+    @apply mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-center
+    text-xs md:text-base
+}
+
+.skill-line{
+    @apply p-1 h-2 block bg-custom-yellow rounded-full origin-left
+}
