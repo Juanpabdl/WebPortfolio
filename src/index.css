@@ -61,6 +61,7 @@ section{
   padding: 2rem;
   min-height: 200px;
   width: 85%;
+  min-width: 250px;
   border: thin solid #1DCD9F;
   border-radius: 10px;
 }

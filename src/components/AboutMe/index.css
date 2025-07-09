@@ -8,7 +8,7 @@
 }
 
 .card-info{
-    @apply p-5 bg-gradient-to-t from-custom-dk-gray to-[#333] rounded-sm
+    @apply p-4 sm:p-5 bg-gradient-to-t from-custom-dk-gray to-[#333] rounded-sm
 }
 
 .card-info p{
