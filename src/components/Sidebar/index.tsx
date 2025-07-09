@@ -20,7 +20,7 @@ const SideBar = () => {
             <div className="burger" onClick={() => toggleMenu()}>
                 <AlignJustify className="icon" size={48} color="#158063" strokeWidth={2.7}/>
             </div>
-            <ul className="navbar_list">
+            <ul className="navbar_list" style={{display: (menuOpen === false) ? 'none' : 'flex'}}>
                 {sideData.map((item, index) => {
                     return (
                         <li key={index} className="group">
