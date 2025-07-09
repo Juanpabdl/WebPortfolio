@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AlignJustify} from "lucide-react";
 import { Link } from "react-router-dom";
 import './index.css'
-import { sideData } from "./sidebarData";
+import { sideData } from "../../utils/data/sidebarData";
 
 const SideBar = () => {
     const [menuOpen, setMenuOpen] = useState(false)

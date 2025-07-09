@@ -1,5 +1,5 @@
 import { Briefcase, Code, UserCircle } from 'lucide-react';
-import skillList from './skillsData';
+import skillList from '../../utils/data/skillsData';
 import './index.css';
 import { useState } from 'react';
 import CustomButton from '../CustomButton';
