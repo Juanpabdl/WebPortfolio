@@ -4,7 +4,7 @@
 }
 
 .banner-container img{
-    @apply w-auto h-auto min-h-[250px] md:w-2/5
+    @apply w-auto h-auto min-h-[250px] md:w-2/5 rounded-t-md md:rounded-none md:rounded-l-md 
 }
 
 .banner-text{
