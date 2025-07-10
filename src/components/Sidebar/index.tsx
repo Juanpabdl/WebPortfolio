@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AlignJustify} from "lucide-react";
+import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 import './index.css'
 import { sideData } from "../../utils/data/sidebarData";
@@ -24,10 +25,18 @@ const SideBar = () => {
                 {sideData.map((item, index) => {
                     return (
                         <li key={index} className="group">
-                            <Link to={item.path} className="navbar_li_box">
-                                {item.icon}
-                                <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
-                            </Link>
+                            {item.path.includes('#') ?
+                                <HashLink smooth to={item.path} className="navbar_li_box">
+                                    {item.icon}
+                                    <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
+                                </HashLink>
+                            :
+                                <Link to={item.path} className="navbar_li_box">
+                                    {item.icon}
+                                    <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
+                                </Link>
+                            }
+                            
                         </li>
                     )
                 })}
