@@ -1,6 +1,7 @@
 import SideBar from "../../components/Sidebar";
 import Banner from "../../components/Banner";
 import AboutMe from "../../components/AboutMe";
+import Footer from "../../components/Footer";
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
                 <AboutMe/>
                 
                 {/* Footer */}
+                <Footer/>
             </div>
         </div>
     )
