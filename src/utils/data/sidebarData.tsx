@@ -8,7 +8,7 @@ export const sideData = [
     },
     {
         title: 'About Me',
-        path: '/about-me',
+        path: '/#aboutme',
         icon: <CircleUserIcon size={32} color="#158063" strokeWidth={2} className="menuIcon"/>
     },
     {
