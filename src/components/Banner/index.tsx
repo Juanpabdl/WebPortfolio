@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import CustomButton from '../CustomButton';
 import './index.css'
 
 const Banner = () => {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate('/projects');
+    }
+    
     return (
         <div className="banner-container">
             <img
@@ -15,7 +22,9 @@ const Banner = () => {
                     both functionality and appeal.
                 </p>
                 {/*Boton*/}
-                <CustomButton className='btn-default mx-auto w-1/2 sm:w-1/3'>Let's Talk</CustomButton>
+                <CustomButton className='btn-default mx-auto w-1/2 sm:w-1/3' onClick={handleButtonClick}>
+                    <p>See more</p>
+                </CustomButton>
             </div>
         </div>
     )
