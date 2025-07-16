@@ -22,7 +22,7 @@ const Banner = () => {
                     both functionality and appeal.
                 </p>
                 {/*Boton*/}
-                <CustomButton className='btn-default mx-auto w-1/2 sm:w-1/3' onClick={handleButtonClick}>
+                <CustomButton className='btn-default mt-3 mx-auto w-1/2 sm:w-1/3' onClick={handleButtonClick}>
                     <p>See more</p>
                 </CustomButton>
             </div>
