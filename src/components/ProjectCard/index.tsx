@@ -27,7 +27,7 @@ const ProjectCard = (props: ProjectProps) => {
                 alt={props.title}
                 className='project-img'/>
             </div>
-            <h3 className='m-3 text-lg md:text-2xl underline'>{props.title}</h3>
+            <h3 className='m-2 text-lg font-semibold md:text-2xl underline'>{props.title}</h3>
             <div className='flex justify-center gap-3'>
                 {props.tags.map((tag,index) => {
                     return(
@@ -35,7 +35,7 @@ const ProjectCard = (props: ProjectProps) => {
                     )
                 })}
             </div>
-            <p className='text-sm md:text-base text-left p-3 m-2'>{props.description}</p>
+            <p className='text-sm text-left p-3 m-2'>{props.description}</p>
             <div className='m-4 mt-0 flex justify-end gap-6'>
                 {props.demoUrl.length > 0 ? 
                     (

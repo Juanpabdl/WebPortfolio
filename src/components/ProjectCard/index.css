@@ -1,5 +1,5 @@
 .project-card{
-    @apply w-auto min-w-[250px] min-h-[300px] flex flex-col flex-nowrap items-stretch 
+    @apply w-auto min-w-[200px] min-h-[300px] flex flex-col flex-nowrap items-stretch 
     bg-gradient-to-t from-black to-custom-dk-gray border-custom-teal border-r-4 border-b-4 rounded-md
     overflow-hidden
 }
@@ -9,5 +9,5 @@
 }
 
 .tag{
-    @apply p-2 bg-gray-600 text-white/90 text-xs rounded-full hover:bg-custom-yellow/50
+    @apply px-2 py-1 bg-gray-600 text-white/90 text-xs font-medium rounded-full hover:bg-custom-yellow/50
 }
