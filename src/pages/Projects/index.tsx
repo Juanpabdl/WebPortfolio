@@ -1,5 +1,6 @@
 import SideBar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
+import ProjectList from "../../components/ProjectList";
 
 const Projects = () => {
     return (
@@ -14,6 +15,7 @@ const Projects = () => {
                 </p>
 
                 {/*Projects Content */}
+                <ProjectList/>
                 
                 {/* Footer */}
                 <Footer/>
