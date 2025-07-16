@@ -6,7 +6,7 @@ const ProjectList = () => {
     return(
         <div id="project-container">
             <h2 className='underline'>My <span className='text-custom-yellow'>Projects</span></h2>
-            <p className='m-4 text-center text-sm md:text-base'> 
+            <p className='px-6 my-8 text-center text-sm md:text-base'> 
                 Here are some of my recent projects, each project was crafted with 
                 attention to detail, performance and user experience in mind.
             </p>
