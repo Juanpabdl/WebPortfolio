@@ -1,5 +1,5 @@
 #project-container{
-    @apply min-h-screen mx-auto my-10 text-center p-3
+    @apply min-h-screen mx-auto my-20 text-center p-3
 }
 
 .project-list{
