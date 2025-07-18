@@ -1,5 +1,6 @@
 import SideBar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
+import ContactSection from "../../components/ContactSection";
 
 const Contact = () => {
     return (
@@ -13,7 +14,8 @@ const Contact = () => {
                     / Web Portfolio / Contact
                 </p>
 
-                {/*Projects Content */}
+                {/*Contact Content */}
+                <ContactSection/>
                 
                 {/* Footer */}
                 <Footer/>

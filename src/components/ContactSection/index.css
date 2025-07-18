@@ -1,0 +1,11 @@
+#contact{
+    @apply min-w-[200px] my-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
+}
+
+#contact-info{
+    @apply p-3 grid grid-cols-1 gap-5 place-items-center
+}
+
+#contact-form{
+    @apply lg:col-span-2
+}
