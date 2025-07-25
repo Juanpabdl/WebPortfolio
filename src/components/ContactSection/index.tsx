@@ -1,8 +1,21 @@
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 import './index.css'
 import CustomButton from '../CustomButton';
 
+type MessageData = {
+    name: string,
+    email: string,
+    contactMessage: string
+}
+
 const ContactSection = () => {
+    const {register, handleSubmit, formState:{errors}} = useForm<MessageData>();
+
+    const onSubmit = (data: MessageData) => {
+        console.log(data)
+    }  
+
     return (
         <div className='mt-14 p-2'>
             <div className='mx-auto max-w-3xl flex flex-col items-center'>
@@ -73,37 +86,43 @@ const ContactSection = () => {
                 {/* Contact form */}
                 <div id="contact-form">
                     <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Send</span> a Message</h3>
-                    <form className='space-y-4 w-full'>
+                    <form className='space-y-4 w-full' onSubmit={handleSubmit(onSubmit)}>
                         <div className='field-container'>
                             <label htmlFor='name' className='field-label'>Your Name: </label>
                             <input 
                             id='name' 
-                            name='name' 
                             type='text' 
-                            required
                             className='field-item'
-                            placeholder='Juan Pablo Díaz'/>
+                            placeholder='Juan Pablo Díaz'
+                            {...register("name",{required:'This field is required'})}/>
                         </div>
+                        {errors.name && <span className='error-message'>{errors.name.message}</span>}
                         <div className='field-container'>
                             <label htmlFor='email' className='field-label'>Your Email: </label>
                             <input 
                             id='email' 
-                            name='email' 
                             type='email' 
-                            required
                             className='field-item'
-                            placeholder='john@email.com'/>
+                            placeholder='john@email.com'
+                            {...register("email",{
+                                required:'This field is required',
+                                pattern: {
+                                    value: /^\S+@\S+$/i,
+                                    message: "Invalid Email Format",
+                                },
+                            })}/>
                         </div>
+                        {errors.email && <span className='error-message'>{errors.email.message}</span>}
                         <div className='field-container'>
                             <label htmlFor='message' className='field-label'>Your Message: </label>
                             <textarea
-                            id='message' 
-                            name='message' 
+                            id='contactMessage' 
                             rows={5}
-                            required
                             className='field-item'
-                            placeholder='Hello, I´d like to talk about...'/>
+                            placeholder='Hello, I´d like to talk about...'
+                            {...register("contactMessage",{required:'This field is required'})}/>
                         </div>
+                        {errors.contactMessage && <span className='error-message'>{errors.contactMessage.message}</span>}
                         <CustomButton 
                         className='btn-default w-full flex items-center justify-center gap-2 text-sm md:text-base' 
                         type='submit'>
