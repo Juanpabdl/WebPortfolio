@@ -14,8 +14,8 @@ const AboutMe = () => {
     );
 
     return (
-        <div id="aboutme" className="py-10 px-2 min-w-[250px] mb-28 md:mb-44">
-            <section id="info-sec" className="mx-auto mb-36">
+        <div id="aboutme" className="py-10 px-2 space-y-24 min-w-[250px] mb-28 md:mb-44">
+            <section id="info-sec" className="cont-section mx-auto">
                 <h2 className="underline text-xl text-center md:text-3xl">About <span className="text-custom-yellow decoration-custom-yellow">Me</span></h2>
                 <div className="info-container">
                     <div className='text-center grid grid-cols-1 gap-4'>
@@ -70,7 +70,7 @@ const AboutMe = () => {
                 </div>
             </section>
             {/* List of skills and tools*/}
-            <section id="skills-sec">
+            <section id="skills-sec" className='cont-section'>
                 <h2 className='underline text-xl text-center md:text-3xl'>My <span className="text-custom-yellow decoration-custom-yellow">Skills</span></h2>
                 <div className='skill-select'>
                     {categories.map((category,key) => {
