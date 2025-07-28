@@ -31,7 +31,7 @@ const ContactSection = () => {
                     <Send color='#000' size={40} strokeWidth={2}/>
                 </div>
             </div>
-            <section id="contact">
+            <section id="contact" className='cont-section'>
                 {/* Info section */}
                 <div id="contact-info">
                     <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Contact</span> Information</h3>
