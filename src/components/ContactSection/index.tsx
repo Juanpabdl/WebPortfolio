@@ -1,7 +1,9 @@
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import './index.css'
 import CustomButton from '../CustomButton';
+import { useState } from 'react';
 
 type MessageData = {
     name: string,
@@ -11,9 +13,21 @@ type MessageData = {
 
 const ContactSection = () => {
     const {register, handleSubmit, formState:{errors}} = useForm<MessageData>();
+    const [isSubmiting, setIsSubmitting] = useState(false)
 
-    const onSubmit = (data: MessageData) => {
-        console.log(data)
+    //Simulating API call 
+    //Message functionallity pending
+    const onSubmit = (data: MessageData) => { 
+        setIsSubmitting(true)
+
+        setTimeout(() => {//Check message state
+            if (data.email) {
+                toast.success('Form submitted successfully!');
+            } else {
+                toast.error('Failed to submit, please try again.');
+            }
+            setIsSubmitting(false)
+        }, 1500)
     }  
 
     return (
@@ -125,8 +139,9 @@ const ContactSection = () => {
                         {errors.contactMessage && <span className='error-message'>{errors.contactMessage.message}</span>}
                         <CustomButton 
                         className='btn-default w-full flex items-center justify-center gap-2 text-sm md:text-base' 
-                        type='submit'>
-                            Send Message
+                        type='submit'
+                        disabled={isSubmiting}>
+                            {isSubmiting ? "Sending..." : "Send Message"}
                             <Send size={16}/>
                         </CustomButton>
                     </form>
