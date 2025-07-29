@@ -31,7 +31,7 @@ const ContactSection = () => {
     }  
 
     return (
-        <div className='mt-14 p-2'>
+        <div className='mt-14 mb-20 p-2'>
             <div className='mx-auto max-w-3xl flex flex-col items-center'>
                 <h2 className='text-center underline'>Lets Get In <span className='text-custom-yellow'>Touch</span></h2>
                     <p className='text-center text-sm md:text-base mt-6 px-5'>
