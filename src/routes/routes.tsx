@@ -3,18 +3,34 @@ import Home from "../pages/Home";
 import Error404 from "../pages/Error404";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
+import ScrollToTop from "../components/ScrollToTop";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Home/>,
+        element: (
+            <>
+                <ScrollToTop/>
+                <Home/>
+            </>
+        ),
         errorElement: <Error404/>
     },{
         path: '/projects',
-        element: <Projects/>,
+        element: (
+            <>
+                <ScrollToTop/>
+                <Projects/>
+            </>
+        ),
     },{
         path: '/contact',
-        element: <Contact/>,
+        element: (
+            <>
+                <ScrollToTop/>
+                <Contact/>
+            </>
+        ),
     }
 ]);
 
