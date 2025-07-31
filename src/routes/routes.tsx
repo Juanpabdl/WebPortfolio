@@ -1,36 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "../pages/Layout";
 import Home from "../pages/Home";
 import Error404 from "../pages/Error404";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
-import ScrollToTop from "../components/ScrollToTop";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: (
-            <>
-                <ScrollToTop/>
-                <Home/>
-            </>
-        ),
-        errorElement: <Error404/>
-    },{
-        path: '/projects',
-        element: (
-            <>
-                <ScrollToTop/>
-                <Projects/>
-            </>
-        ),
-    },{
-        path: '/contact',
-        element: (
-            <>
-                <ScrollToTop/>
-                <Contact/>
-            </>
-        ),
+        element: <Layout />,
+        errorElement: <Error404 />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "projects", element: <Projects /> },
+            { path: "contact", element: <Contact /> },
+        ],
     }
 ]);
 
