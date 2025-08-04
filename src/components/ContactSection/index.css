@@ -15,7 +15,7 @@
 }
 
 .field-label{
-    @apply block text-sm font-medium mb-2
+    @apply block text-sm font-medium mb-1
 }
 
 .field-item{
