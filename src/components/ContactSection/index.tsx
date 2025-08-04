@@ -8,6 +8,7 @@ import { useState } from 'react';
 type MessageData = {
     name: string,
     email: string,
+    subject: string,
     contactMessage: string
 }
 
@@ -100,7 +101,7 @@ const ContactSection = () => {
                 {/* Contact form */}
                 <div id="contact-form">
                     <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Send</span> a Message</h3>
-                    <form className='space-y-4 w-full' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='space-y-3 w-full' onSubmit={handleSubmit(onSubmit)}>
                         <div className='field-container'>
                             <label htmlFor='name' className='field-label'>Your Name: </label>
                             <input 
@@ -127,6 +128,16 @@ const ContactSection = () => {
                             })}/>
                         </div>
                         {errors.email && <span className='error-message'>{errors.email.message}</span>}
+                        <div className='field-container'>
+                            <label htmlFor='subject' className='field-label'>Your Email: </label>
+                            <input 
+                            id='subject' 
+                            type='text' 
+                            className='field-item'
+                            placeholder='New Subject'
+                            {...register("subject",{required:'This field is required'})}/>
+                        </div>
+                        {errors.subject && <span className='error-message'>{errors.subject.message}</span>}
                         <div className='field-container'>
                             <label htmlFor='message' className='field-label'>Your Message: </label>
                             <textarea
