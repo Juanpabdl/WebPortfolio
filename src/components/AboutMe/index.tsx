@@ -87,8 +87,8 @@ const AboutMe = () => {
                 <div className='skill-container'>
                         {filteredSkills.map((skill,index) => {
                             return(
-                                <div className='card-info'>
-                                    <div key={index} className='w-auto flex gap-4'>
+                                <div key={index} className='card-info'>
+                                    <div className='w-auto flex gap-4'>
                                         <div className='text-left min-w-full'>
                                             <h4 className='font-semibold text-lg'>{skill.name}</h4>
                                             <div className='h-2 bg-custom-dk-gray overflow-hidden'>
