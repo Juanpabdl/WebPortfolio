@@ -1,35 +1,69 @@
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import './index.css'
+import emailjs, {EmailJSResponseStatus} from '@emailjs/browser';
+import { useState, useRef } from 'react';
+import * as yup from "yup";
 import CustomButton from '../CustomButton';
-import { useState } from 'react';
+import './index.css'
+import { yupResolver } from '@hookform/resolvers/yup';
 
-type MessageData = {
-    name: string,
-    email: string,
-    subject: string,
-    contactMessage: string
-}
+const FormSchema = yup.object({
+    name: yup.string().required('This field is required'),
+    email: yup.string().email('Invalid Email Format').required('This field is required'),
+    subject: yup.string().required('This field is required'),
+    contactMessage: yup.string().required('This field is required'),
+})
 
 const ContactSection = () => {
-    const {register, handleSubmit, formState:{errors}} = useForm<MessageData>();
+    const {register, handleSubmit, reset, formState:{errors}} = useForm<yup.InferType<typeof FormSchema>>({
+        resolver: yupResolver(FormSchema),
+        defaultValues:{
+            name: "",
+            email: "",
+            subject: "",
+            contactMessage: ""
+        }
+    });
+    const formRef = useRef<HTMLFormElement|null>(null)
     const [isSubmiting, setIsSubmitting] = useState(false)
 
-    //Simulating API call 
-    //Message functionallity pending
-    const onSubmit = (data: MessageData) => { 
-        setIsSubmitting(true)
+    const onSubmit = async(data: yup.InferType<typeof FormSchema>) => { 
+        try{
+            if (formRef.current) {
+                setIsSubmitting(true)
 
-        setTimeout(() => {//Check message state
-            if (data.email) {
-                toast.success('Form submitted successfully!');
-            } else {
-                toast.error('Failed to submit, please try again.');
+                await emailjs.sendForm(
+                    import.meta.env.VITE_SERVICE_ID,
+                    import.meta.env.VITE_TEMPLATE_ID,
+                    formRef.current,
+                    import.meta.env.VITE_PUBLIC_KEY
+                );
+
+                console.info('Email sent successfully!');
+                toast.success(
+                    <div>
+                        <h4>Email sent.</h4>
+                        <p className='text-sm text-white/50'>Thanks {data.name}! I´ll keep in touch.</p>
+                    </div>
+                );
+                reset()
+                setIsSubmitting(false);
             }
-            setIsSubmitting(false)
-        }, 1500)
-    }  
+        } catch (error) {
+            if(error instanceof EmailJSResponseStatus){
+                console.error('EmailJS failed to send: ', error)
+            } else {
+                console.error('An unexpected error occured', error);
+            }
+            toast.error(
+                <div>
+                    <h4>Failed to submit.</h4>
+                    <p className='text-sm text-white/50'>Check your message and try again.</p>
+                </div>
+            );
+        }
+    } 
 
     return (
         <div className='mt-14 mb-20 p-2'>
@@ -101,7 +135,7 @@ const ContactSection = () => {
                 {/* Contact form */}
                 <div id="contact-form">
                     <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Send</span> a Message</h3>
-                    <form className='space-y-3 w-full' onSubmit={handleSubmit(onSubmit)}>
+                    <form ref={formRef} className='space-y-3 w-full' onSubmit={handleSubmit(onSubmit)}>
                         <div className='field-container'>
                             <label htmlFor='name' className='field-label'>Your Name: </label>
                             <input 
@@ -109,43 +143,37 @@ const ContactSection = () => {
                             type='text' 
                             className='field-item'
                             placeholder='Juan Pablo Díaz'
-                            {...register("name",{required:'This field is required'})}/>
+                            {...register("name")}/>
                         </div>
                         {errors.name && <span className='error-message'>{errors.name.message}</span>}
                         <div className='field-container'>
-                            <label htmlFor='email' className='field-label'>Your Email: </label>
+                            <label htmlFor='email' className='field-label'>Email: </label>
                             <input 
                             id='email' 
                             type='email' 
                             className='field-item'
                             placeholder='john@email.com'
-                            {...register("email",{
-                                required:'This field is required',
-                                pattern: {
-                                    value: /^\S+@\S+$/i,
-                                    message: "Invalid Email Format",
-                                },
-                            })}/>
+                            {...register("email")}/>
                         </div>
                         {errors.email && <span className='error-message'>{errors.email.message}</span>}
                         <div className='field-container'>
-                            <label htmlFor='subject' className='field-label'>Your Email: </label>
+                            <label htmlFor='subject' className='field-label'>Subject: </label>
                             <input 
                             id='subject' 
                             type='text' 
                             className='field-item'
                             placeholder='New Subject'
-                            {...register("subject",{required:'This field is required'})}/>
+                            {...register("subject")}/>
                         </div>
                         {errors.subject && <span className='error-message'>{errors.subject.message}</span>}
                         <div className='field-container'>
-                            <label htmlFor='message' className='field-label'>Your Message: </label>
+                            <label htmlFor='contactMessage' className='field-label'>Your Message: </label>
                             <textarea
                             id='contactMessage' 
                             rows={5}
                             className='field-item'
                             placeholder='Hello, I´d like to talk about...'
-                            {...register("contactMessage",{required:'This field is required'})}/>
+                            {...register("contactMessage")}/>
                         </div>
                         {errors.contactMessage && <span className='error-message'>{errors.contactMessage.message}</span>}
                         <CustomButton 
