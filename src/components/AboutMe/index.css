@@ -16,7 +16,7 @@
 }
 
 .card-icon{
-    @apply p-2 rounded-full bg-custom-teal/20
+    @apply p-2 rounded-full bg-custom-teal/20 text-custom-teal
 }
 
 .skill-select{
