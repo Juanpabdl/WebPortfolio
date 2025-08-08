@@ -1,4 +1,4 @@
-import Banner from "../../components/Banner";
+import HeroSection from "../../components/HeroSection";
 import AboutMe from "../../components/AboutMe";
 import Footer from "../../components/Footer";
 
@@ -12,8 +12,8 @@ const Home = () => {
                 / Web Portfolio
             </p>
 
-            {/* Banner Section */}
-            <Banner />
+            {/* Hero Section */}
+            <HeroSection/>
 
             {/* Main Content */}
             <AboutMe/>

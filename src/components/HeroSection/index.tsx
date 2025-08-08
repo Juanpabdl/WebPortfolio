@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import CustomButton from '../CustomButton';
 import './index.css'
 
-const Banner = () => {
+const HeroSection = () => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
@@ -30,4 +30,4 @@ const Banner = () => {
     )
 }
 
-export default Banner;
+export default HeroSection;
