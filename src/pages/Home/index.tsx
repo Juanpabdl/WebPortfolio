@@ -1,6 +1,7 @@
 import HeroSection from "../../components/HeroSection";
 import AboutMe from "../../components/AboutMe";
 import Footer from "../../components/Footer";
+import { ArrowDown } from "lucide-react";
 
 const Home = () => {
     return (
@@ -14,6 +15,11 @@ const Home = () => {
 
             {/* Hero Section */}
             <HeroSection/>
+
+            <div className="absolute md:bottom-2 left-1/2 transform translate-x-1/2 flex flex-col items-center animate-bounce">
+                <span className="text-sm text-white/50 mb-2">Scroll</span>
+                <ArrowDown className="w-5 h-5 text-custom-teal"/>
+            </div>
 
             {/* Main Content */}
             <AboutMe/>

@@ -14,7 +14,7 @@ const AboutMe = () => {
     );
 
     return (
-        <div id="aboutme" className="py-10 px-2 space-y-24 min-w-[250px] mb-28 md:mb-44">
+        <div id="aboutme" className="py-24 px-2 relative space-y-24 min-w-[250px] mb-28 md:mb-44">
             <section id="info-sec" className="cont-section mx-auto">
                 <h2 className="underline text-xl text-center md:text-3xl">About <span className="text-custom-yellow decoration-custom-yellow">Me</span></h2>
                 <div className="info-container">
