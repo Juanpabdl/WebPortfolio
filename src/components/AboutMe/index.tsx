@@ -7,7 +7,7 @@ import CustomButton from '../CustomButton';
 const AboutMe = () => {
     const [activeCategory, setActiveCategory] = useState("all")
 
-    const categories = ["all","frontend","backend","tools"]
+    const categories = ["all","frontend","backend","tools","softskills"]
 
     const filteredSkills = skillList.filter((skill) => 
         activeCategory === "all" || skill.category === activeCategory
