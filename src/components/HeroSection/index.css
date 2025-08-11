@@ -1,5 +1,5 @@
 .banner-container{
-  @apply w-3/4 md:w-[90%] min-w-[250px] h-[500px] md:h-[300px] flex flex-col mx-auto mt-20 mb-28 md:mb-52 rounded-md
+  @apply w-3/4 md:w-[85%] min-w-[250px] h-[500px] md:h-[350px] flex flex-col mx-auto my-24 md:mb-52 rounded-md
   md:flex-row
 }
 
