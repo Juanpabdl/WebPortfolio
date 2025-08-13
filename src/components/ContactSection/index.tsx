@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import emailjs, {EmailJSResponseStatus} from '@emailjs/browser';
@@ -117,19 +117,17 @@ const ContactSection = () => {
                                 className='hover:text-custom-yellow'>Saltillo, Coahuila, MX.</a>
                             </div>
                         </div>
-                        {/* 
                         <div className='pt-8'>
-                            <h4>Connect with me</h4>
-                            <div className='mt-2 flex gap-3'>
-                                <a href='#' target='_blank'>
+                            <h4 className='text-center font-semibold mb-4'>Connect with me</h4>
+                            <div className='mt-2 flex space-x-4 justify-center'>
+                                <a href='https://www.linkedin.com/in/juanpablodiazlopez' target='_blank'>
                                     <Linkedin/>
                                 </a>
-                                <a href='#' target='_blank'>
+                                <a href='https://github.com/Juanpabdl' target='_blank'>
                                     <Github/>
                                 </a>
                             </div>
                         </div> 
-                        */}   
                     </div>
                 </div>
                 {/* Contact form */}
