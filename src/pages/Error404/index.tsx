@@ -17,9 +17,11 @@ const Error404 = () => {
     }
     
     return(
-        <div className='text-black'>
-            <h3>Oops! An unexpected error ocurred.</h3>
-            <p>{ errorMessage }</p>
+        <div className=' mx-auto page justify-center'>
+            <div className='grid grid-cols-1 gap-3'>
+                <h2 className='text-custom-yellow'>Oops! An unexpected error ocurred.</h2>
+                <p className='text-white text-center'>{ errorMessage }</p>
+            </div>
         </div>
     )
 };
