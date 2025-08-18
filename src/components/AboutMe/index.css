@@ -9,6 +9,7 @@
 
 .card-info{
     @apply p-4 sm:p-5 bg-gradient-to-t from-custom-dk-gray to-[#333] rounded-sm
+    hover:scale-105 hover:ease-in-out hover:duration-200
 }
 
 .card-info p{
