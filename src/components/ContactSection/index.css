@@ -1,5 +1,5 @@
 #contact{
-    @apply min-w-[200px] my-10 grid grid-cols-1 md:grid-cols-2 gap-12
+    @apply min-w-[200px] my-20 grid grid-cols-1 md:grid-cols-2 gap-12
 }
 
 #contact-info, #contact-form{
