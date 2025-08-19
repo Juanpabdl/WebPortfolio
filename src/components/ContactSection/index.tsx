@@ -69,21 +69,21 @@ const ContactSection = () => {
         <div className='mt-14 mb-20 p-2'>
             <div className='mx-auto max-w-3xl flex flex-col items-center'>
                 <h2 className='text-center underline'>Lets Get In <span className='text-custom-yellow'>Touch</span></h2>
-                    <p className='text-center text-sm md:text-base mt-6 px-5'>
+                <p className='text-center text-sm md:text-base mt-6 px-5 animate-fadeindown'>
                     <span className='text-custom-yellow'>Need help</span> making your next idea into a reality?
                     Want to <span className='text-custom-yellow'>Collaborate</span>?
                     I´m open to discussing new oportunities
                 </p>
                 <div 
-                className='mt-6 p-4 rounded-full bg-custom-teal flex items-center justify-center' 
+                className='mt-10 p-4 rounded-full bg-custom-teal flex items-center justify-center animate-fadeindown' 
                 style={{width: '80px', height: '80px'}}>
                     <Send color='#000' size={40} strokeWidth={2}/>
                 </div>
             </div>
-            <section id="contact" className='cont-section mx-auto'>
+            <section id="contact" className='cont-section mx-auto animate-fadeindowndelay1'>
                 {/* Info section */}
                 <div id="contact-info">
-                    <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Contact</span> Information</h3>
+                    <h3 className='text-2xl font-semibold mb-6 animate-fadeindowndelay2'><span className='text-custom-yellow'>Contact</span> Information</h3>
                     <div className='space-y-6 justify-center text-sm sm:text-base'>
                         <div className='flex items-start space-x-4'>
                             <div className='p-3 rounded-full bg-custom-teal/20'>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                 </div>
                 {/* Contact form */}
                 <div id="contact-form">
-                    <h3 className='text-2xl font-semibold mb-6'><span className='text-custom-yellow'>Send</span> a Message</h3>
+                    <h3 className='text-2xl font-semibold mb-6 animate-fadeindowndelay2'><span className='text-custom-yellow'>Send</span> a Message</h3>
                     <form ref={formRef} className='space-y-3 w-full' onSubmit={handleSubmit(onSubmit)}>
                         <div className='field-container'>
                             <label htmlFor='name' className='field-label'>Your Name: </label>

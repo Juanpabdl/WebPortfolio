@@ -29,14 +29,20 @@ const SideBar = () => {
                                 <HashLink smooth to={item.path} className="navbar_li_box" onClick={() => toggleMenu()}>
                                     <div className="flex flex-nowrap gap-5 justify-start">
                                         {item.icon}
-                                        <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
+                                        <span className="animate-fadein"
+                                        style={{display: menuOpen === false ? 'none' : 'inline-block'}}>
+                                            {item.title}
+                                        </span>
                                     </div>
                                 </HashLink>
                             :
                                 <Link to={item.path} className="navbar_li_box">
                                     <div className="flex flex-nowrap gap-5 justify-start" onClick={() => toggleMenu()}>
                                         {item.icon}
-                                        <span style={{display: menuOpen === false ? 'none' : 'inline-block'}}>{item.title}</span>
+                                        <span className="animate-fadein"
+                                        style={{display: menuOpen === false ? 'none' : 'inline-block'}}>
+                                            {item.title}
+                                        </span>
                                     </div>
                                 </Link>
                             }
