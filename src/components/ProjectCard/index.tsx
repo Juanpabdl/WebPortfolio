@@ -36,7 +36,7 @@ const ProjectCard = (props: ProjectProps) => {
                 })}
             </div>
             <p className='text-sm text-left p-3 m-2'>{props.description}</p>
-            <div className='m-4 mt-0 flex justify-end gap-6'>
+            <div className='mt-auto p-3 flex justify-end gap-4'>
                 {props.demoUrl.length > 0 ? 
                     (
                         <CustomButton className='btn-default text-sm' onClick={handleClickDemo}>
